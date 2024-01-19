@@ -1,0 +1,42 @@
+h1{
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+h3{
+    background-color: #E50914;
+    font-weight: bold;
+}
+
+.rowposter{
+    display: flex;
+    overflow-y: hidden;
+    overflow-x: scroll;
+}
+
+.rowimg
+{
+    height: 300px;
+    object-fit: cover;
+    width: 300px;
+    box-sizing: content-box;
+    transition: transform 450ms;
+    margin-right: 7px;
+}
+
+.rowimg:hover
+{
+    transform: scale(1.09);
+    cursor: pointer;
+}
+
+.largeposter{
+    max-height: 1200px;
+}
+
+.rowposter::-webkit-scrollbar
+{
+    display: none;
+}

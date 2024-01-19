@@ -1,0 +1,97 @@
+<div class="body">
+  <div class="form-wrapper">
+    <h2>Sign Up for Free</h2>
+    <form [formGroup]="registerForm" (ngSubmit)="registerSubmited()">
+
+      <div class="form-element">
+        <input type="text" formControlName="firstName" id="firstname">
+        <label>Enter your First Name</label>
+      
+        <div class="form-text text-danger" *ngIf="FirstName.errors?.['required'] && (FirstName.touched || FirstName.dirty)">
+          First Name is Required
+        </div>
+      
+        <div class="form-text text-danger" *ngIf="FirstName.errors?.['minlength'] && (FirstName.touched || FirstName.dirty)">
+          First Name is too Short
+        </div>
+      
+        <div class="form-text text-danger" *ngIf="FirstName.errors?.['pattern'] && (FirstName.touched || FirstName.dirty)">
+          First letter should be an Alphabet
+        </div>
+      </div>  
+
+      <div class="form-element">
+        <input type="text" formControlName="lastName" id="lastname">
+        <label>Enter your Last Name</label>
+        <div class="form-text text-danger" *ngIf = "LastName.errors?.['required'] && LastName.touched || LastName.dirty">
+          Last Name is Required
+        </div>
+        <div class="form-text text-danger" *ngIf = "LastName.errors?.['minlenght'] && LastName.touched || LastName.dirty">
+          Last Name is too Short
+        </div>
+        <div class="form-text text-danger" *ngIf = "LastName.errors?.['pattern'] && LastName.touched || LastName.dirty">
+          Last letter should be Alphabet
+        </div>
+      </div>
+
+      <div class="form-element">
+        <input type="text" formControlName ="email" class= "email-control" id="email">
+        <label>Enter your Email</label>
+        
+        <label class="errmsg text-danger" *ngIf="getError(registerForm.get('email'))">
+        {{getError(registerForm.get('email'))}}
+        </label>
+      </div>
+
+      <div class="form-element">
+        <input type="text" formControlName="mobileNumber" (keypress)="numericOnly($event)" type="text" maxlength="10" id="mobilenumber">
+        <label>Enter Mobile Number</label>
+      </div>
+
+      <div class="form-element">
+        <input type="text" formControlName="userName" id="username">
+        <label>Enter your Username</label>
+      </div>
+
+      <div class="form-element">
+        <input
+          name="date"
+          type="text"
+          onfocus="(this.type='date')"
+          onblur="if(!this.value)this.type='text'"
+          formControlName="birthDate"
+          id="birthdate"
+        >
+        <label>Enter Birth Date</label>
+      </div>
+
+      <div class="gdropdown">
+        <select id="gender" formControlName="gender">
+          <option disabled selected style="display:none;"></option>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+          <option value="Others">Others</option>
+        </select>
+        <label>Enter your Gender</label>
+      </div>
+
+      <div class="form-element">
+        <input [type]="changetype ? 'password' : 'text'" formControlName="password" id="password">
+        <label for="password">Enter Password</label>
+        <span class="eyeicon" (click)="viewpass()">
+          <fa-icon [icon]="visible ? faEye : faEyeSlash"></fa-icon>
+        </span>        
+      </div>
+      
+      <div class="form-element">
+        <input [type]="changetype? 'password': 'text'" formControlName="confirmPassword" id="confirmpassword">
+        <label>Confirm Password</label>
+        <span class="eyeicon" (click)="viewpass()">
+          <fa-icon [icon]="visible ? faEye : faEyeSlash"></fa-icon>
+        </span> 
+      </div>
+      <button type="submit">Sign Up</button>
+      <p>Have an account? <a routerLink="/login"> Login Now </a></p>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,130 @@
+img{
+    width: 100%;
+    height: auto;
+}
+
+h1, h2{
+    color: #ffffff;
+    font-weight: bold;
+}
+
+p{
+    color: rgb(255, 231, 94);
+    font-size: 16px;
+}
+
+.WTBtn{
+    border: 1px solid rgb(255, 255, 255);
+    background-color: #E50914;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.WTBtn:hover{
+    background-color: #E50914;
+    color: #ffffff;
+    border: 3px solid #ffffff;
+}
+
+.WLBtn{
+    color:black;
+    border: 1px solid #606060;
+    font-weight: bold;
+}
+
+.WLBtn:hover{
+    background-color: #ffffff;
+    border: 3px solid #606060;
+}
+
+.reactionIcons {
+    display: inline-flex;
+}
+
+.reactionIcons .react {
+margin: 0 17px;
+display: flex;
+align-items: center;
+justify-content: center;
+flex-direction: column;
+position: relative;
+z-index: 2;
+cursor: pointer;
+}
+
+.reactionIcons .react span {
+position: relative;
+height: 45px;
+width: 45px;
+display: block;
+background: #fff;
+text-align: center;
+border-radius: 50%;
+z-index: 2;
+}
+
+.reactionIcons .react span i {
+font-size: 25px;
+line-height: 45px;
+}
+
+.reactionIcons .react .tooltip {
+position: absolute;
+bottom: -50px;
+background-color: #ffffff;
+font-size: 18px;
+padding: 8px 14px;
+border-radius: 10px;
+font-weight: bold;
+pointer-events: none;
+transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+left: 50%;
+transform: translateX(-50%);
+}
+
+.reactionIcons .react .tooltip::before {
+content: "";
+position: absolute;
+height: 13px;
+width: 13px;
+background: #fff;
+top: -6px;
+left: 50%;
+transform: translateX(-50%) rotate(45deg);
+}
+
+.reactionIcons .react:hover .tooltip {
+bottom: -70px;
+opacity: 1;
+pointer-events: auto;
+}
+
+.rating{
+    border: 1px solid #5b5b5b;
+}
+
+.rating:hover{
+    border: 3px solid #606060;
+}
+
+
+.information {
+    display: flex;
+    align-items: center;
+}
+  
+.information  p {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    color: rgb(255, 231, 94);
+    font-size: 16px;
+}
+  
+.information p:not(:last-child)::after {
+    content: '•';
+    margin: 0 0.5em;
+    color: #ffffff;
+    font-size: 2em;
+}
